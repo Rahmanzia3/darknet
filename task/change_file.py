@@ -138,6 +138,11 @@ def cfg(number):
     file = open(str(os. getcwd())+'/yolo.cfg','r')
     lines = file.readlines()
     # print('!!!!!!!!!!!!!!!!!!!!!',lines)
+    
+    lines[1] = 'batch=32'
+    lines[2] = 'subdivisions=8'
+    
+    
     lines[960] = 'filters='+str((int(number[0])+5)*3)+'\n'
     lines[1134] = 'filters='+str((int(number[0])+5)*3)+'\n'
     lines[1047] = 'filters='+str((int(number[0])+5)*3)+'\n'
