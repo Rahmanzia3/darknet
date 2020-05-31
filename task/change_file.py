@@ -139,8 +139,8 @@ def cfg(number):
     lines = file.readlines()
     # print('!!!!!!!!!!!!!!!!!!!!!',lines)
     
-    lines[1] = 'batch=32'
-    lines[2] = 'subdivisions=8'
+    lines[1] = 'batch=32'+'\n'
+    lines[2] = 'subdivisions=8'+'\n'
     
     
     lines[960] = 'filters='+str((int(number[0])+5)*3)+'\n'
