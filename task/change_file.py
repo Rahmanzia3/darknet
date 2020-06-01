@@ -4,7 +4,7 @@ WAT TO CHANGE OBJ.DATA OBJ.NAMES NAD MAKE FILE
 '''
 
 
-
+import subprocess
 import requests
 from tqdm import tqdm
 from zipfile import ZipFile 
@@ -244,8 +244,14 @@ def start_training(run):
     run_command = str(run)
     path = '/app/darknet/'
     os.chdir(path)
-    os.system(run_command)
-
+    p = subprocess.Popen(run_command, shell=True, stdout=subprocess.PIPE)
+    while True:
+        out = p.stdout.readline()
+        if out.decode("utf-8").find("hours")!=-1:
+            print("##########################################")
+            
+            print(out.decode("utf-8")
+            print('###########################################')
 
 
 
