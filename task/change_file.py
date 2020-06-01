@@ -263,7 +263,7 @@ def start_training(run):
             print((out.decode("utf-8")))
             print('###########################################')
             x=out.decode("utf-8").split(':')[0]
-            if x%100 == 0:
+            if int(x)%100 == 0:
                 if x != 0:
                     send_tele(out.decode("utf-8"),'chart.png')
 
