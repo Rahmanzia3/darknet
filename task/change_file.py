@@ -250,7 +250,7 @@ def start_training(run):
         if out.decode("utf-8").find("hours")!=-1:
             print("##########################################")
             
-            print(out.decode("utf-8")
+            print((out.decode("utf-8")))
             print('###########################################')
 
 
