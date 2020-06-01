@@ -23,7 +23,18 @@ names = /home/tericsoft/mustafa/darknet/mask_own/obj.names
 backup = /home/tericsoft/mustafa/darknet/mask_own/backup
 
 '''
+import telegram
+from telegram.ext import Updater
+import datetime
 
+def send_tele(data,image_path):
+    updater = Updater('805281461:AAH09xnakEe8MxOBLQ7jWaiNolGxoZyxxrM')
+    dp = updater.dispatcher
+    token='805281461:AAH09xnakEe8MxOBLQ7jWaiNolGxoZyxxrM'
+    bot = telegram.Bot(token=token)
+    # if name=="unknown":
+    bot.send_message(chat_id='-496362146', text=data+ str(datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")))
+    bot.send_photo(chat_id='-496362146', photo=open(image_path,'rb'))
 
 def download_file_from_google_drive(id, destination):
     def get_confirm_token(response):
@@ -252,6 +263,8 @@ def start_training(run):
             
             print((out.decode("utf-8")))
             print('###########################################')
+    
+    send_tele(out.decode("utf-8"),'chart.png')
 
 
 
