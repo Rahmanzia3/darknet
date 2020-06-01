@@ -260,16 +260,11 @@ def start_training(run):
         out = p.stdout.readline()
         if out.decode("utf-8").find("hours")!=-1:
             print("##########################################")
-            
             print((out.decode("utf-8")))
             print('###########################################')
-    
-            
-            
             x=out.decode("utf-8").split(':')[0]
             if x%100 == 0:
                 if x != 0:
-                    
                     send_tele(out.decode("utf-8"),'chart.png')
 
 
