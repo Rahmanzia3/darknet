@@ -264,12 +264,13 @@ def start_training(run):
             print((out.decode("utf-8")))
             print('###########################################')
     
-            send_tele(out.decode("utf-8"),'chart.png')
+            
             
             x=out.decode("utf-8").split(':')[0]
             if x%100 == 0:
                 if x != 0:
-                    print(x)
+                    
+                    send_tele(out.decode("utf-8"),'chart.png')
 
 
 
